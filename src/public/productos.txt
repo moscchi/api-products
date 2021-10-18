@@ -6,6 +6,12 @@
     "id": 1
   },
   {
+    "title": "pack bombillas",
+    "price": "2000",
+    "thumbnail": "none",
+    "id": 2
+  },
+  {
     "title": "Termo",
     "price": 3000,
     "thumbnail": "",
@@ -24,9 +30,15 @@
     "id": 5
   },
   {
-    "title": "pack bombillas",
-    "price": "2000",
+    "title": "mate chico",
+    "price": "150",
     "thumbnail": "none",
-    "id": 2
+    "id": 6
+  },
+  {
+    "title": "papita",
+    "price": "120",
+    "thumbnail": "asd",
+    "id": 7
   }
 ]

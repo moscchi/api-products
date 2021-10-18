@@ -11,23 +11,64 @@
     <title>Formulario Productos</title>
   </head>
   <body>
+ 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <div class="container">
         <h1>Formulario de productos</h1>
         <div class="row">
-            <a href="localhost:8080/api/productos">Obtener</a>
-            <form action="/producto" method="get">
-                <label for="producto">Selecciona el id que quieres obtener</label><input type="number" name="producto" id="getId">
-                <button type="submit">Obtener</button>
-            </form>
-            <div class="col">
-              <input type="text" class="form-control" placeholder="First name" aria-label="First name">
-            </div>
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-            </div>
+          <div class="d-grid gap-2 col-6 mx-auto mb-3">
+            <a href="http://localhost:8080/api/productos" class="btn btn-info">Obtener Productos</a>
           </div>
-    </div>
+          <hr>
+          <div class="d-grid gap-2 col-6 mx-auto mb-3">
+          <div class="input-group input-group-sm mb-3">
+            <input type="number" id="getId" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Ingrese un n° de ID"> 
+            <button class="input-group-text" id="inputGroup-sizing-sm" onclick="getId()">Obtener producto por id</button>
+          </div>
+        </div>
+        <hr>
+<form action="http://localhost:8080/api/productos" method="post" enctype="application/x-www-form-urlencoded">
+  <h4>Ingresar un producto</h4>
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon2">Titulo: </span>
+  <input type="text" class="form-control" name="title" placeholder="Ej papita" aria-label="Recipient's username" aria-describedby="basic-addon2">
+</div>
+<div class="input-group mb-3">
+  <span class="input-group-text">Precio: $</span>
+  <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" name="price">
+  <span class="input-group-text">.00</span>
+</div>
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon3">URL de la imagen del producto:</span>
+  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="https://www.imagen.com/imagen" name="thumbnail">
+</div>
+<button type="submit" class="btn btn-primary">Enviar producto</button>
+</form>
+<hr>
 
+  <h4>Actualizar un producto un producto</h4>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon2">Id: </span>
+    <input type="text" class="form-control" name="id" placeholder="Ingrese el id del producto" aria-label="Recipient's username" aria-describedby="basic-addon2" id="productId">
+  </div>
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon2">Titulo: </span>
+  <input type="text" class="form-control" name="title" placeholder="Ej papita" aria-label="Recipient's username" aria-describedby="basic-addon2" id="productTitle">
+</div>
+<div class="input-group mb-3">
+  <span class="input-group-text">Precio: $</span>
+  <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" name="price" id="productPrice">
+  <span class="input-group-text">.00</span>
+</div>
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon3">URL de la imagen del producto:</span>
+  <input type="text" class="form-control" name="thumbnail" placeholder="https://link.com/imagen" aria-label="Recipient's username" aria-describedby="basic-addon2" id="productThumbnail">
+</div>
+<button class="input-group-text" id="inputGroup-sizing-sm" onclick="updateProduct()">Actualizar producto</button>
+<hr>
+
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./app.js"></script>
   </body>
 </html>
