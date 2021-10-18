@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Mate",
+    "price": 1300,
+    "thumbnail": "",
+    "id": 1
+  },
+  {
+    "title": "Termo",
+    "price": 3000,
+    "thumbnail": "",
+    "id": 3
+  },
+  {
+    "title": "Matera",
+    "price": "1200",
+    "thumbnail": "none",
+    "id": 4
+  },
+  {
+    "title": "Azucarera",
+    "price": "250",
+    "thumbnail": "none",
+    "id": 5
+  },
+  {
+    "title": "pack bombillas",
+    "price": "2000",
+    "thumbnail": "none",
+    "id": 2
+  }
+]
