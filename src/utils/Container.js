@@ -79,6 +79,9 @@ class Container {
     const objs = await this.getAll();
     obj.id = parseInt(obj.id); //Aca hay que parsearlo poruqe sino te queda como string y te rompe el codigo del getById
     objs.push(obj);
+    console.log(objs);
+    const newArray = objs.sort((a, b)=> {return a.id - b.id}); 
+    console.log(objs);
     try {
       await fs.promises.writeFile(this.ruta, JSON.stringify(objs, null, 2));
       return objs;

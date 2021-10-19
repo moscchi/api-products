@@ -6,9 +6,9 @@
     "id": 1
   },
   {
-    "title": "pack bombillas",
-    "price": "2000",
-    "thumbnail": "none",
+    "title": "termo",
+    "price": "3000",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_724447-MLA43695344068_102020-O.webp",
     "id": 2
   },
   {
@@ -40,5 +40,11 @@
     "price": "120",
     "thumbnail": "asd",
     "id": 7
+  },
+  {
+    "title": "Agua mineral",
+    "price": "60",
+    "thumbnail": "lalala",
+    "id": 8
   }
 ]
