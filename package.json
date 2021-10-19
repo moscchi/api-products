@@ -1,7 +1,7 @@
 {
-  "name": "sebi",
-  "version": "1.0.0",
-  "description": "",
+  "name": "Api-Products-By-txt",
+  "version": "1.0.1",
+  "description": "Lee ",
   "main": "app.js",
   "type": "module",
   "scripts": {

@@ -1,11 +1,9 @@
-
 function getId() {
   const id = document.getElementById("getId").value;
-  window.location.href = `http://localhost:8080/api/producto/${id}`;
+  window.location.href = `/api/producto/${id}`;
 }
 
 async function updateProduct() {
-
   const id = document.getElementById("productId").value;
   const title = document.getElementById("productTitle").value;
   const price = document.getElementById("productPrice").value;
@@ -16,24 +14,17 @@ async function updateProduct() {
     price,
     thumbnail,
   };
-  const respusta = async (obj) => {
-    console.log(obj);
-    const res = await axios.put(`http://localhost:8080/api/producto/${obj.id}`, obj);
-    console.log(res);
-    return res;
-  }
-  const papi = await respusta(obj);
-  console.log(papi);
-  return papi;
+  const upiProduct = await axios.put(`/api/producto/${obj.id}`, obj);
+  return upiProduct;
+}
+async function deleteById() {
+  const id = document.getElementById("deleted").value;
+  const res = await axios.delete(`/api/productos/${id}`).catch((err) => {
+    console.log(err);
+  });
 }
 
-/*  let content = data.length;
-        console.log(content);
-        fetch(`http://localhost:8080/api/producto/${obj.id}`, {
-                    method: 'PUT',
-                    body: JSON.stringify(data), // data can be `string` or {object}!
-                    
-                    }).then(res => res.ok())
-                    .catch(error => console.error('Error:', error))
-                    .then(response => console.log('Success:', response));
-                    } */
+function imagenje(){
+  let elDiv = document.getElementById('imagen');
+  elDiv.innerHTML= `<img src="./telacreiste.jpg" width="500" height="450" >`;
+}

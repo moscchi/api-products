@@ -8,7 +8,6 @@ const updateProductService = async (req) => {
     thumbnail,
     id,
   };
-  console.log(obj);
   const newProduct = await contenedor.update(obj);
   return newProduct;
 };

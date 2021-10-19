@@ -8,10 +8,8 @@ class Container {
     try {
       let objs = await fs.promises.readFile(this.ruta, "utf-8");
       let objsParsed = JSON.parse(objs);
-      console.log(typeof id); //EL MUY #!$!$ LLEGABA COMO STRING.
       let byId = objsParsed.filter((obj) => obj.id === parseInt(id)); 
-      console.log("object", byId);
-      if(byId.length === 0)return { error: 'Producto no encontrado'};
+      if(!byId.length) return { error: 'Producto no encontrado'};
       return byId;
     } catch (err) {
       console.log(err);
@@ -20,7 +18,6 @@ class Container {
   async getAll() {
     try {
       const objs = await fs.promises.readFile(this.ruta, "utf-8");
-      console.log(objs);
       return JSON.parse(objs);
     } catch (err) {
       return { error: 'Productos no encontrados'};
@@ -29,7 +26,7 @@ class Container {
   async save(objes) {
     const objs = await this.getAll();
     let newId;
-    if (objs.length === 0) {
+    if (!objs.length) {
       newId = 1;
     } else {
       newId = objs[objs.length - 1].id + 1;
@@ -64,7 +61,6 @@ class Container {
           byId = "El id no existe";
         }
       }
-      console.log("object", byId);
       if (typeof byId === "string") {
         return byId;
       } else {
@@ -79,9 +75,7 @@ class Container {
   }
   async update(obj) {
     const { id } = obj;
-    console.log(obj);
-    console.log("container", id);
-    const eliminar = await this.deleteById(parseInt(id));
+    await this.deleteById(parseInt(id));
     const objs = await this.getAll();
     obj.id = parseInt(obj.id); //Aca hay que parsearlo poruqe sino te queda como string y te rompe el codigo del getById
     objs.push(obj);
@@ -92,8 +86,7 @@ class Container {
       throw new Error(`Error al guardar: ${err}`);
     }
   }
-}
+} 
 
-const contenedor = new Container("src/public/productos.txt");
-console.log(contenedor.ruta);
+const contenedor = new Container("src/database/productos.txt");
 export default contenedor;
